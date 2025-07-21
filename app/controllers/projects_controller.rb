@@ -32,7 +32,7 @@ class ProjectsController < ApplicationController
             raise ActiveRecord::Rollback, "Video creation failed"
           end
         end
-        # NotifyProjectManagerJob.perform_later(@project.id)
+        NotifyProjectManagerJob.perform_later(@project.id)
   
         redirect_to projects_path, notice: "Project ordered successfully!"
       else

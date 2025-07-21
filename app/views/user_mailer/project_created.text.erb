@@ -1,0 +1,15 @@
+<h1>Your project <%= @project.name %> has been created</h1>
+
+<p>Hello <%= @client.name %>,</p>
+
+<p>We are excited to inform you that your project, <strong><%= @project.name %></strong>, has been successfully created. The project is now in progress.</p>
+
+<p>Project Details:</p>
+<ul>
+  <li>Name: <%= @project.name %></li>
+  <li>Footage Link: <%= @project.footage_url %></li>
+  <li>Status: <%= @project.status %></li>
+  <li>Project Manager: <%= @project.project_manager.name %></li>
+</ul>
+
+<p>Thank you for choosing us!</p>
