@@ -9,5 +9,25 @@
   },
   "browserslist": [
     "defaults"
-  ]
+  ],
+  "devDependencies": {
+    "esbuild": "^0.25.6"
+  },
+  "description": "This project is a video editing platform where clients can order customized video projects, select from various video types, and proceed to payment. The client logs in, views a list of their projects, and has the option to create new projects by selecting video types and entering footage details. The Project, VideoType, and User models are built with appropriate relationships, such as clients and project managers being assigned to projects, and video types being associated with projects. The form submission process is handled by form_with, where video types are selected using dynamic buttons, and the total price is calculated as items are added or removed from the cart. We integrated a payment modal that triggers when the user clicks the \"Proceed to Payment\" button, but the form is only submitted once the payment details are provided. We also utilized partials for reusable components like video type cards to keep the code organized and maintainable. Lastly, the background job for notifying the project manager was considered, and asynchronous tasks were planned but left for implementation to enhance scalability.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.21",
+    "bootstrap": "^5.3.7",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "sass": "^1.89.2"
+  }
 }

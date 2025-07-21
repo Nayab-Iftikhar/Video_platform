@@ -1,0 +1,16 @@
+<!-- app/views/projects/_video_type_card.html.erb -->
+<div class="col-md-4">
+  <div class="card mb-4 video-type-card" data-id="<%= video_type.id %>" data-price="<%= video_type.price %>">
+    <video class="card-img-top" controls>
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="card-body">
+      <h5 class="card-title"><%= video_type.name %></h5>
+      <p class="card-text"><%= video_type.descrption %></p>
+      <p><strong>Price:</strong> $<%= video_type.price %></p>
+      <button type="button" class="btn btn-primary add-to-cart-btn" data-action="click->projects#addToCart">Add to Cart</button>
+      <%= hidden_field_tag "video_type_ids[]", video_type.id, disabled: true, id: "video_type_input_#{video_type.id}" %>
+    </div>
+  </div>
+</div>
