@@ -1,0 +1,41 @@
+<div data-controller="projects">
+  <div class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="mb-0">Order New Project</h2>
+      <%= button_to "Logout", session_path, method: :delete, form_class: "d-inline", class: "btn btn-outline-danger" %>
+    </div>
+
+    <div class="card shadow-sm p-4">
+      <%= form_with(model: @project, url: projects_path, local: true, id: "orderProjectForm") do |form| %>
+        <div class="mb-3">
+          <%= form.label :name, "Project Name", class: "form-label" %>
+          <%= form.text_field :name, class: "form-control", required: true %>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label :footage_url, "Raw Footage Link", class: "form-label" %>
+          <%= form.text_field :footage_url, class: "form-control", required: true %>
+        </div>
+
+        <h4 class="mt-4 mb-3">Select Video Types</h4>
+        <div class="row">
+          <% @video_types.each do |video_type| %>
+            <%= render "projects/video_type_card", video_type: video_type %>
+          <% end %>
+        </div>
+
+        <h5 class="mt-4">Total: $<span data-target="projects.totalPrice">0.00</span></h5>
+
+        <%= form.submit "Submit Order", class: "btn btn-success mt-3", style: "display:none;", id: "submitFormBtn" %>
+
+        <!-- Proceed to Payment Button -->
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#paymentModal">
+          Proceed to Payment
+        </button>      
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Render the Payment Modal Partial -->
+  <%= render "projects/payment_modal" %>
+</div>
