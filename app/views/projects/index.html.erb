@@ -1,0 +1,35 @@
+<div class="container py-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="mb-0">Your Projects</h2>
+    <div class="d-flex gap-2">
+      <% if Current.user.client? %>
+        <%= link_to "Order New Project", new_project_path, class: "btn btn-dark btn-block" %>
+      <% end %>
+
+      <%= button_to "Logout", session_path, method: :delete, form_class: "d-inline", class: "btn btn-outline-danger" %>
+    </div>
+  </div>
+
+  <% if @projects.any? %>
+    <div class="table-responsive">
+      <div class="card shadow-sm p-4">
+          <table class="table align-middle mb-0 bg-white">
+            <thead class="bg-light">
+              <tr>
+                <th>Project</th>
+                <th>Status</th>
+                <th><%= project_counterpart_label %></th>
+                <th>Footage</th>
+                <th>Created</th>
+              </tr>
+            </thead>
+            <tbody>
+              <%= render @projects %>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  <% else %>
+    <p class="text-muted">No projects found.</p>
+  <% end %>
+</div>

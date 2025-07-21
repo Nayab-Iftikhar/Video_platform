@@ -1,18 +1,33 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
-
+puts "Creating Video types..."
 video_types = VideoType.create!([
-  { name: "Highlight Reel", price: 500, format: "MP4" },
-  { name: "Documentary Edit", price: 1000, format: "MOV" },
-  { name: "Teaser", price: 300, format: "MP4" },
-  { name: "Social Media Clip", price: 200, format: "MP4" }
+  { 
+    name: "Highlight Reel", 
+    price: 500, 
+    format: "MP4", 
+    descrption: "Create the Highlights for the Social Media platforms", 
+    video_url: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" 
+  },
+  { 
+    name: "Documentary Edit", 
+    price: 1000, 
+    format: "MOV",
+    descrption: "Full-length documentary style edit for storytelling",
+    video_url: "https://sample-videos.com/video123/mov/720/big_buck_bunny_720p_1mb.mov"
+  },
+  { 
+    name: "Teaser", 
+    price: 300, 
+    format: "MP4",
+    descrption: "Short teaser to build anticipation",
+    video_url: "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4"
+  },
+  { 
+    name: "Social Media Clip", 
+    price: 200, 
+    format: "MP4",
+    descrption: "Quick clips optimized for social media sharing",
+    video_url: "https://www.w3schools.com/html/mov_bbb.mp4"
+  }
 ])
 puts "Created #{video_types.count} video types."
 

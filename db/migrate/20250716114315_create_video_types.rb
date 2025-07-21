@@ -4,6 +4,8 @@ class CreateVideoTypes < ActiveRecord::Migration[8.0]
       t.string :name, null: false
       t.decimal :price, null: false
       t.string :format, null: false
+      t.string :descrption, null: false
+      t.string :video_url, null: false
 
       t.timestamps
     end

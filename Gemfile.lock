@@ -88,6 +88,7 @@ GEM
     brakeman (7.0.2)
       racc
     builder (3.3.0)
+    byebug (11.1.3)
     capybara (3.40.0)
       addressable
       matrix
@@ -211,6 +212,8 @@ GEM
     public_suffix (6.0.2)
     puma (6.6.0)
       nio4r (~> 2.0)
+    pundit (2.5.0)
+      activesupport (>= 3.0.0)
     raabro (1.4.0)
     racc (1.8.1)
     rack (3.1.16)
@@ -369,6 +372,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap
   brakeman
+  byebug (~> 11.1, >= 11.1.3)
   capybara
   cssbundling-rails
   debug
@@ -378,6 +382,7 @@ DEPENDENCIES
   mysql2 (~> 0.5)
   propshaft
   puma (>= 5.0)
+  pundit (~> 2.5)
   rails (~> 8.0.2)
   rubocop-rails-omakase
   selenium-webdriver

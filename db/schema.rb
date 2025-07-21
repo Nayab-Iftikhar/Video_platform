@@ -47,6 +47,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_16_114500) do
     t.string "name", null: false
     t.decimal "price", precision: 10, null: false
     t.string "format", null: false
+    t.string "descrption", null: false
+    t.string "video_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,31 @@
+<tr>
+  <td>
+    <div class="d-flex align-items-center">
+      <img src="https://mdbcdn.b-cdn.net/img/new/avatars/1.jpg"
+          alt="Project"
+          style="width: 45px; height: 45px"
+          class="rounded-circle" />
+      <div class="ms-3">
+        <p class="fw-bold mb-1"><%= project.name %></p>
+        <p class="text-muted mb-0">ID: <%= project.id %></p>
+      </div>
+    </div>
+  </td>
+
+  <td>    
+    <span class="badge rounded-pill <%= status_badge_class(project.status) %>">
+      <%= project.status.humanize %>
+    </span>
+  </td>
+
+  <td>
+    <p class="fw-normal mb-1"><%= project_counterpart_user(project)&.name %></p>
+    <p class="text-muted mb-0"><%= project_counterpart_user(project)&.email_address %></p>
+  </td>
+
+  <td>
+    <%= link_to "View", project.footage_url, target: "_blank", class: "btn btn-outline-secondary btn-sm" %>
+  </td>
+
+  <td><%= formatted_date(project.created_at) %></td>
+</tr>
